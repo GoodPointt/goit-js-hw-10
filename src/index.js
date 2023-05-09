@@ -19,11 +19,11 @@ function onInput(e) {
   const searchQuery = e.target.value.trim().toLowerCase();
   if (!searchQuery) return clearSearch();
 
-  fetchCountryByName(searchQuery).then(renderCountries).catch(onFetchErr);
+  fetchCountryByName(searchQuery).then(updateCountries).catch(onFetchErr);
   loading();
 }
 
-function renderCountries(countries) {
+function updateCountries(countries) {
   if (countries.length > 10) {
     clearSearch();
     return Notiflix.Notify.info(
