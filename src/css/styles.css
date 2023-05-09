@@ -1,6 +1,16 @@
 * {
   box-sizing: border-box;
 }
+ul,
+ol {
+  list-style: none;
+  padding-left: none;
+  margin: 0;
+  padding: 0;
+}
+p {
+  margin: 0;
+}
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
@@ -17,4 +27,22 @@ body {
   padding: 8px;
   max-width: 320px;
   margin-bottom: 16px;
+}
+
+.loading-img {
+  position: absolute;
+}
+
+.is-hidden {
+  display: none;
+}
+
+.value {
+  font-size: 20px;
+  font-weight: normal;
+}
+
+.list-item {
+  font-size: 20;
+  font-weight: bold;
 }
