@@ -4,7 +4,7 @@ function renderSingleCountrie(CountriesArr) {
   refs.ulRef.insertAdjacentHTML(
     'beforeend',
     `<li>
-      <div style='display: flex; align-items: center'><img src='${
+      <div style='display: flex; align-items: center; gap: 10px'><img src='${
         CountriesArr[0].flags.svg
       }' alt='flag' width='50' height='50'>
       <p style='font-weight: bold; font-size: 24px'>${
@@ -27,7 +27,7 @@ function renderCountriesList(countriesArr) {
   countriesArr.map(countrie => {
     refs.ulRef.insertAdjacentHTML(
       'beforeend',
-      `<li><p><img src='${countrie.flags.svg}' alt='flag' width='30'> ${countrie.name.official}</p></li>`
+      `<li style='display: flex; align-items: center; gap: 10px'><img src='${countrie.flags.svg}' alt='flag' width='30'><p> ${countrie.name.official}</p></li>`
     );
   });
 }
