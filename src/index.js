@@ -19,8 +19,11 @@ function onInput(e) {
   const searchQuery = e.target.value.trim().toLowerCase();
   if (!searchQuery) return clearSearch();
 
-  fetchCountryByName(searchQuery).then(updateCountries).catch(onFetchErr);
   loading();
+  fetchCountryByName(searchQuery)
+    .then(updateCountries)
+    .then(loading)
+    .catch(onFetchErr);
 }
 
 function updateCountries(countries) {
@@ -43,10 +46,7 @@ function updateCountries(countries) {
 }
 
 function loading() {
-  setTimeout(() => {
-    refs.loadingImg.classList.toggle('is-hidden');
-  }, 1000);
-  refs.loadingImg.classList.remove('is-hidden');
+  refs.loadingImg.classList.toggle('is-hidden');
 }
 
 function onFetchErr() {
